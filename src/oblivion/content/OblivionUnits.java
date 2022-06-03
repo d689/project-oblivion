@@ -1258,7 +1258,7 @@ public class OblivionUnits{
 			engineSize = 0f;
 			range = 32f * 8f;
 			hitSize = 20f;
-			maxRange = range;
+			maxRange = 11f;
 			constructor = CopterComp::new;
 			topDrawers.addAll(
 				new RotorDrawer("-rotor") {{
@@ -1316,8 +1316,8 @@ public class OblivionUnits{
 					bullet = new LightningBulletType(){{
 						damage = 70;
 						lightningColor = Color.valueOf("BAF2B7");
-						lightningLength = 11;
-						lightningLengthRand = 10;
+						lightningLength = 12;
+						lightningLengthRand = 11;
 						lightningType = new BulletType(0.0001f, 0f){{
 							lifetime = Fx.lightning.lifetime;
 							hitEffect = Fx.hitLancer;
@@ -1338,8 +1338,8 @@ public class OblivionUnits{
 					bullet = new LightningBulletType(){{
 						damage = 70;
 						lightningColor = Color.valueOf("BAF2B7");
-						lightningLength = 11;
-						lightningLengthRand = 10;
+						lightningLength = 12;
+						lightningLengthRand = 11;
 						lightningType = new BulletType(0.0001f, 0f){{
 							lifetime = Fx.lightning.lifetime;
 							hitEffect = Fx.hitLancer;
