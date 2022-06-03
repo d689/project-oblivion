@@ -1139,7 +1139,7 @@ public class OblivionUnits{
 					recoil = 0.5f;
 					top = false;
 					bullet = new BasicBulletType(3f, 15) {{
-						lifetime = 60f;
+						lifetime = 45f;
 						trailWidth = 1.5f;
                                                 trailLength = 5;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
