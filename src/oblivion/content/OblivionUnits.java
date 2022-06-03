@@ -1175,7 +1175,7 @@ public class OblivionUnits{
 					shootSound = Sounds.missile;
 					inaccuracy = 5f;
 					shoot.shots = 2;
-					bullet = new MissileBulletType(2.5f, 30) {{
+					bullet = new MissileBulletType(2.5f, 20) {{
 						lifetime = 80f;
 						keepVelocity = false;
 						trailWidth = 2f;
@@ -1193,7 +1193,7 @@ public class OblivionUnits{
 					top = false;
 					shootSound = Sounds.artillery;
 					maxRange = 12.5f * 8f;
-					bullet = new ArtilleryBulletType(2f, 13) {{
+					bullet = new ArtilleryBulletType(2f, 15) {{
 						lifetime = 100f;
 						trailWidth = 2f;
                                                 trailLength = 5;
