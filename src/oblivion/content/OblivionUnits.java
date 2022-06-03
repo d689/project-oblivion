@@ -1138,8 +1138,8 @@ public class OblivionUnits{
 					reload = 10f;
 					recoil = 0.5f;
 					top = false;
-					bullet = new BasicBulletType(2f, 15) {{
-						lifetime = 80f;
+					bullet = new BasicBulletType(3f, 15) {{
+						lifetime = 60f;
 						trailWidth = 1.5f;
                                                 trailLength = 5;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
@@ -1173,12 +1173,15 @@ public class OblivionUnits{
 					reload = 40f;
 					top = false;
 					shootSound = Sounds.missile;
+					inaccuracy = 5f;
 					shoot.shots = 2;
 					bullet = new MissileBulletType(2.5f, 30) {{
 						lifetime = 80f;
 						keepVelocity = false;
 						trailWidth = 2f;
                                                 trailLength = 5;
+						weaveScale = 8f;
+						weaveMag = 2f;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
 						backColor = Color.valueOf("87B085");
 					}};
@@ -1190,7 +1193,7 @@ public class OblivionUnits{
 					top = false;
 					shootSound = Sounds.artillery;
 					maxRange = 12.5f * 8f;
-					bullet = new ArtilleryBulletType(1f, 13) {{
+					bullet = new ArtilleryBulletType(2f, 13) {{
 						lifetime = 100f;
 						trailWidth = 2f;
                                                 trailLength = 5;
@@ -1285,7 +1288,7 @@ public class OblivionUnits{
 						splashDamage = 60f;
 						lightning = 3;
 					        lightningLength = 6;
-						lightningDamage = 9;
+						lightningDamage = 12;
 						bulletInterval = 10f;
 						intervalBullet = new LightningBulletType(){{
 							damage = 25;
@@ -1313,8 +1316,8 @@ public class OblivionUnits{
 					bullet = new LightningBulletType(){{
 						damage = 70;
 						lightningColor = Color.valueOf("BAF2B7");
-						lightningLength = 9;
-						lightningLengthRand = 8;
+						lightningLength = 11;
+						lightningLengthRand = 10;
 						lightningType = new BulletType(0.0001f, 0f){{
 							lifetime = Fx.lightning.lifetime;
 							hitEffect = Fx.hitLancer;
@@ -1335,8 +1338,8 @@ public class OblivionUnits{
 					bullet = new LightningBulletType(){{
 						damage = 70;
 						lightningColor = Color.valueOf("BAF2B7");
-						lightningLength = 9;
-						lightningLengthRand = 8;
+						lightningLength = 11;
+						lightningLengthRand = 10;
 						lightningType = new BulletType(0.0001f, 0f){{
 							lifetime = Fx.lightning.lifetime;
 							hitEffect = Fx.hitLancer;
