@@ -251,7 +251,9 @@ public class OblivionUnits{
 						width = height = 12f;
 						lifetime = 300f;
 						frontColor = OblivionPal.mesoMedium;
-						backColor = OblivionPal.mesoDark;
+						backColor = trailColor = OblivionPal.mesoDark;
+						trailWidth = 2.1f;
+                                                trailLength = 10;
 						fragBullets = 5;
 						fragBullet = new BasicBulletType(8f, 30) {{
 							homingPower = 1f;
@@ -260,7 +262,9 @@ public class OblivionUnits{
 							hitSound = despawnSound = Sounds.artillery;
 							hitEffect = despawnEffect = Fx.blastExplosion;
 							frontColor = OblivionPal.mesoMedium;
-							backColor = OblivionPal.mesoDark;
+							backColor = trailColor = OblivionPal.mesoDark;
+							trailWidth = 2.1f;
+                                                        trailLength = 10;
 						}};	
 					}};
 				}}
@@ -424,9 +428,9 @@ public class OblivionUnits{
 			);
 		}};
 		niboletra = new OblivionUnitType("niboletra") {{
-			health = 20000;
-			armor = 10f;
-			speed = 0.7f;
+			health = 18000;
+			armor = 11.5f;
+			speed = 0.8f;
 			flying = true;
 			constructor = UnitEntity::create;
 			engineDrawer = unit -> {
@@ -509,7 +513,8 @@ public class OblivionUnits{
 					}};
 					bullet = new BasicBulletType(8f, 150) {{
 						pierce = true;
-						pierceCap = 7;
+						pierceCap = 5;
+						pierceBuilding = true;
 						lifetime = 40f;
 						width = height = 15f;
 						hitEffect = Fx.flakExplosion;
@@ -601,6 +606,7 @@ public class OblivionUnits{
 						width = height = 8f;
 						lifetime = 100f;
 						collidesTeam = true;
+						keepVelocity = false;
 						backColor = trailColor = hitColor = lightColor = lightningColor = Pal.heal;
 						frontColor = Color.white;
 					}};
@@ -1134,7 +1140,9 @@ public class OblivionUnits{
 					top = false;
 					bullet = new BasicBulletType(2f, 15) {{
 						lifetime = 80f;
-						frontColor = Color.valueOf("BAF2B7");
+						trailWidth = 1.5f;
+                                                trailLength = 5;
+						frontColor = trailColor = Color.valueOf("BAF2B7");
 						backColor = Color.valueOf("87B085");
 					}};
 				}}
@@ -1162,11 +1170,15 @@ public class OblivionUnits{
 				new Weapon("oblivion-aphrodite-missile") {{
 					x = 5f;
 					y = 6f;
-					reload = 60f;
+					reload = 40f;
 					top = false;
 					shootSound = Sounds.missile;
+					shoot.shots = 2;
 					bullet = new MissileBulletType(2.5f, 30) {{
 						lifetime = 80f;
+						keepVelocity = false;
+						trailWidth = 2f;
+                                                trailLength = 5;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
 						backColor = Color.valueOf("87B085");
 					}};
@@ -1174,12 +1186,14 @@ public class OblivionUnits{
 				new Weapon("oblivion-aphrodite-mount") {{
 					x = 3.75f;
 					y = -4f;
-					reload = 10f;
+					reload = 45f;
 					top = false;
 					shootSound = Sounds.artillery;
 					maxRange = 12.5f * 8f;
 					bullet = new ArtilleryBulletType(1f, 13) {{
 						lifetime = 100f;
+						trailWidth = 2f;
+                                                trailLength = 5;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
 						backColor = Color.valueOf("87B085");
 						collidesAir = collidesGround = collidesTiles = collides;
@@ -1262,9 +1276,16 @@ public class OblivionUnits{
 					bullet = new ArtilleryBulletType(2f, 50) {{
 						lifetime = 128f;
 						width = height = 20f;
+						trailWidth = 2f;
+                                                trailLength = 6;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
 						backColor = Color.valueOf("87B085");
 						collidesAir = collidesGround = collidesTiles = collides;
+						splashDamageRadius = 35f;
+						splashDamage = 60f;
+						lightning = 3;
+					        lightningLength = 6;
+						lightningDamage = 9;
 						bulletInterval = 10f;
 						intervalBullet = new LightningBulletType(){{
 							damage = 25;
@@ -1292,8 +1313,8 @@ public class OblivionUnits{
 					bullet = new LightningBulletType(){{
 						damage = 70;
 						lightningColor = Color.valueOf("BAF2B7");
-						lightningLength = 3;
-						lightningLengthRand = 6;
+						lightningLength = 9;
+						lightningLengthRand = 8;
 						lightningType = new BulletType(0.0001f, 0f){{
 							lifetime = Fx.lightning.lifetime;
 							hitEffect = Fx.hitLancer;
@@ -1314,8 +1335,8 @@ public class OblivionUnits{
 					bullet = new LightningBulletType(){{
 						damage = 70;
 						lightningColor = Color.valueOf("BAF2B7");
-						lightningLength = 3;
-						lightningLengthRand = 6;
+						lightningLength = 9;
+						lightningLengthRand = 8;
 						lightningType = new BulletType(0.0001f, 0f){{
 							lifetime = Fx.lightning.lifetime;
 							hitEffect = Fx.hitLancer;
