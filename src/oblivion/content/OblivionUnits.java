@@ -1139,7 +1139,7 @@ public class OblivionUnits{
 					recoil = 0.5f;
 					top = false;
 					bullet = new BasicBulletType(3f, 15) {{
-						lifetime = 45f;
+						lifetime = 60f;
 						trailWidth = 1.5f;
                                                 trailLength = 5;
 						frontColor = trailColor = Color.valueOf("BAF2B7");
@@ -1256,9 +1256,9 @@ public class OblivionUnits{
 			flying = true;
 			fallSpeed = 0.007f;
 			engineSize = 0f;
-			range = 32f * 8f;
+			range = 12f * 8f;
 			hitSize = 20f;
-			maxRange = 11f;
+			maxRange = range;
 			constructor = CopterComp::new;
 			topDrawers.addAll(
 				new RotorDrawer("-rotor") {{
